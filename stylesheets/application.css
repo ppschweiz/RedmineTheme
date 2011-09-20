@@ -138,10 +138,6 @@ h3, h4 { font-weight: normal; color: #000;}
 	border-bottom: none;
 }
 
-/* TODO: Done the lines above. Need to review the lines below.
-   Done and changed by LukyLuke
-*/
-
 /* LukyLuke: Different things added */
 #history .journal { padding: 5px; margin: 0 0 10px; }
 .reply h4, #history .journal h4 { margin:0; padding:0; font-weight: bold; border-bottom:1px solid #989898; }
@@ -278,6 +274,7 @@ input[type="text"], input[type="file"], input[type='password'], textarea, select
 	-moz-border-radius-bottomleft: 3px; -webkit-border-bottom-left-radius: 3px;
 	-moz-border-radius-bottomright: 3px; -webkit-border-bottom-right-radius: 3px;
 }
+
 #history .journal:nth-child(even), #content .attachments {
 	background-color: #FFF7EA;
 }
