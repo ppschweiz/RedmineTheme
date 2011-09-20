@@ -2,10 +2,10 @@
 @import url(../../../stylesheets/application.css);
 
 /*
-         
+
      _/_/_/   _/_/_/    _/_/_/
-    _/    _/ _/    _/  _/ 
-   _/__/_/  _/__/_/     _/  
+    _/    _/ _/    _/  _/
+   _/__/_/  _/__/_/     _/
   _/       _/            _/
  _/       _/        _/_/_/
 
@@ -29,8 +29,8 @@ a:hover { text-decoration: none; color: #F5AF77;}
 #sidebar label, #sidebar a:link, #sidebar a:hover, #sidebar a:active, #sidebar a:visited { color: #A57F57; }
 
 #header, #top-menu { margin: 0; }
-#header { background: url(../img/logo.png) no-repeat 0px 0px; padding: 8px 0 0 0; height: 140px; }
-#header h1 { margin-left: 370px; margin-top: 36px; }
+#header { background: url(../img/logo.png) no-repeat 0px 0px; padding: 8px 0 0 0; height: 140px; position: relative;} /* Resize-Fix: relative */
+#header h1 { margin-left: 370px; margin-top: 36px; overflow: hidden; white-space: nowrap; }
 #header #quick-search { margin: 24px; padding-top: 25px; }
 #header input, #header select { border: 1px solid #C9792A; color: #BE6813; background: url(../img/bgsuche.png) repeat;}
 #header #quick-search * { color: #BE6813; }
@@ -42,13 +42,16 @@ a:hover { text-decoration: none; color: #F5AF77;}
 #top-menu #loggedas a { font-weight: bold; }
 #top-menu a:hover { text-decoration: none; color: #F5AF77;}
 
-#main { background: transparent; margin: 0 24px 0px 24px; }
+#main { background: transparent; /*margin: 0 24px 0px 24px;*/min-width:1024px;} /* Resize-Fix: min-width */
 
-#content { 
+#content {
 	font-size: 118%;
 	line-height: 155%;
-	background: #fff; 
-	width: 74.5%;
+	background: #fff;
+	/*width: 74.5%;*/ /* Resize-Fix */
+	width: 71%; /* Resize-Fix */
+	margin: 0 0 0 1%; /* Resize-Fix */
+	min-width: 652px; /* Resize-Fix */
 	border: 1px solid #C7640C;
 	-moz-border-radius-topleft: 3px; -webkit-border-top-left-radius: 3px;
 	-moz-border-radius-topright: 3px; -webkit-border-top-right-radius: 3px;
@@ -56,25 +59,25 @@ a:hover { text-decoration: none; color: #F5AF77;}
 	-moz-border-radius-bottomright: 3px; -webkit-border-bottom-right-radius: 3px;
 }
 
-#sidebar { 
-        background: #fff;
-        width: 21.5%;
-        border: 1px solid #C7640C;
-        -moz-border-radius-topleft: 3px; -webkit-border-top-left-radius: 3px;
-        -moz-border-radius-topright: 3px; -webkit-border-top-right-radius: 3px;
-        -moz-border-radius-bottomleft: 3px; -webkit-border-bottom-left-radius: 3px;
-        -moz-border-radius-bottomright: 3px; -webkit-border-bottom-right-radius: 3px;
-
+#sidebar {
+	background: #fff;
+	width: 22%; /* Resize-Fix */
+	margin: 0 1% 0 0; /* Resize-Fix */
+	border: 1px solid #C7640C;
+	-moz-border-radius-topleft: 3px; -webkit-border-top-left-radius: 3px;
+	-moz-border-radius-topright: 3px; -webkit-border-top-right-radius: 3px;
+	-moz-border-radius-bottomleft: 3px; -webkit-border-bottom-left-radius: 3px;
+	-moz-border-radius-bottomright: 3px; -webkit-border-bottom-right-radius: 3px;
 	padding: 0 1em 0.5em;
 }
 
-#footer { 
+#footer {
 	border: none;
 	background: url(../img/bgfot.jpg) repeat-x 50% 0%;
 	clear: left;
 	color:#666666;
 	font-size: 0.8em;
-	padding-bottom:15px; 
+	padding-bottom:15px;
 	text-align:left;
 	margin: 8px 0 0;
 	height: 104px;
@@ -94,10 +97,10 @@ h1, h2, h3, h4, h5, h6 { color: #000; font-family: 'Lucida Grande', 'Lucida Sans
 h1 { color: #000; font-size: 24px; font-weight: normal; margin:0pt 0pt 0pt 0.25em; padding:0pt 0pt 10px; text-align:left; }
 h2, h3, h4, .wiki h1, .wiki h2, .wiki h3 { border-bottom: 0px;}
 
-h2, .wiki h1 { 
-	background-color: #FBF8F2; 
-	margin: 2px 0px 10px; 
-	padding: 10px .7em; 
+h2, .wiki h1 {
+	background-color: #FBF8F2;
+	margin: 2px 0px 10px;
+	padding: 10px .7em;
 	font-size: 21px;
 	font-weight: normal;
 	font-family: 'Lucida Grande', 'Lucida Sans Unicode', Arial, Verdana, sans-serif;
@@ -108,7 +111,7 @@ h2, .wiki h1 {
 	-moz-border-radius-bottomleft: 3px; -webkit-border-bottom-left-radius: 3px;
 	-moz-border-radius-bottomright: 3px; -webkit-border-bottom-right-radius: 3px;
 }
-.wiki h2 { background-color: #fff; border: none;}
+.wiki h2 { background-color: #FBF8F2; font-size:1.1em; padding: 1px 5px; }
 
 h3, h4 { font-weight: normal; color: #000;}
 
@@ -119,15 +122,15 @@ h3, h4 { font-weight: normal; color: #000;}
 
 
 /* Menu */
-#main-menu { margin: 0 18.5px; margin-bottom: -1px;}
+#main-menu { margin: 0 18.5px; margin-bottom: -1px; z-index:9999;} /* Resize-Fix: z-index */
 #main-menu li a { font-weight: normal; padding:6px 8px 8px; }
-#main-menu li a:hover { 
+#main-menu li a:hover {
 	color: #000;
-	background: transparent; 
-	text-decoration: none; 
+	background: transparent;
+	text-decoration: none;
 }
-#main-menu li a.selected, #main-menu li a.selected:hover { 
-	background-color:#fff; 
+#main-menu li a.selected, #main-menu li a.selected:hover {
+	background-color:#fff;
 	color: #111;
 	border: 1px solid #C7640C;
 	-moz-border-radius-topleft: .3em; -webkit-border-top-left-radius: .3em;
@@ -135,10 +138,22 @@ h3, h4 { font-weight: normal; color: #000;}
 	border-bottom: none;
 }
 
-// TODO: Done the lines above. Need to review the lines below. 
+/* TODO: Done the lines above. Need to review the lines below.
+   Done and changed by LukyLuke
+*/
+
+/* LukyLuke: Different things added */
+#history .journal { padding: 5px; margin: 0 0 10px; }
+.reply h4, #history .journal h4 { margin:0; padding:0; font-weight: bold; border-bottom:1px solid #989898; }
+#history .journal h4 { margin: 3px 1px 5px 0px; padding: 0 5px 5px; }
+blockquote { background: #FFF7EA; padding: 5px; font-size: 0.95em; }
+blockquote p { padding: 0; margin: 5px 0; }
+div.issue { background: #FFF7EA; border-radius: 0.3em; }
+tr.parent.open { font-weight: bold; background-color: inherited; } /* an invalid background-color should use the parent one */
+tr.parent.open span.expander, tr.parent span.expander { background-repeat: no-repeat; background-position: center; }
+table.list tbody tr:hover { background-color:#FBF8F2; }
 
 /* Settings menu */
-
 #content .tabs ul li a {
 	font-weight: normal;
 	font-size: .9em;
@@ -161,22 +176,26 @@ h3, h4 { font-weight: normal; color: #000;}
 	-moz-border-radius-topleft: .3em; -webkit-border-top-left-radius: .3em;
 	-moz-border-radius-topright: .3em; -webkit-border-top-right-radius: .3em;
 }
+.context-menu-selection, .context-menu-selection:hover { background-color: #F5ECD6 !important; }
+.context-menu-selection, .context-menu-selection:hover, .context-menu-selection a, .context-menu-selection a:hover { color: #000 !important; }
 
 /* Tables */
 table.list { border: none; }
-table.list th { background-color: #fff; }
+table.list th { background-color: #F5ECD6; }
 table.list tbody td, table.list tbody tr td { border-bottom: solid 1px #ddd; padding:4px 10px 4px 3px; }
 table.list thead th {
 	border: none;
 	border-bottom:1px solid #999999;
 	font-size:9px;
-	font-weight:normal;
-	padding:0pt 3px 3px;
+	font-weight: bold;
+	padding:3px;
 	text-transform:uppercase;
 }
 
 table.list thead th a { color: #2e2e2e; }
 table.list thead th a:hover { color: #2e2e2e; }
+table.list tr.odd { background-color: transparent; }
+table.list tr.even { background-color: #FFF7EA; }
 
 /* Issues grid styles by priorities (provided by Wynn Netherland) */
 table.list tr.issue a { color: #3c3c3c; }
@@ -219,18 +238,18 @@ p.breadcrumb {
 }
 
 /* Fields */
-input[type='text'], input[type='password'], textarea { font-size: 13px; font-family: Andale Mono,Lucida Console,Monaco,fixed,monospace; }
-input[type="text"], textarea, select { padding: 2px;  }
-input[type="text"]:focus, textarea:focus, select:focus {  }
+input[type='text'], input[type='password'], input[type='file'], textarea { font-size: 13px; font-family: Andale Mono,Lucida Console,Monaco,fixed,monospace; }
+input[type="text"], input[type='file'], input[type='password'], textarea, select { padding: 2px;  }
+input[type="text"]:focus, , input[type='file']:focus, input[type='password']:focus, textarea:focus, select:focus {  }
 option {  }
-input#issue_subject { font-size: 200%; width: 90%; }
+input#issue_subject { font-size: 1em; width: 90%; }
 input#issue_subject, #project_description { width: 92.5%; }
 textarea#issue_description { width: 93%;}
 
 /* Misc */
-input[type="text"], textarea, select {
+input[type="text"], input[type="file"], input[type='password'], textarea, select {
 	border: 1px #989898 solid;
-	background-color: #F5F5F5;
+	background-color: #FEFEFE;
 	-moz-border-radius-topleft: 3px; -webkit-border-top-left-radius: 3px;
 	-moz-border-radius-topright: 3px; -webkit-border-top-right-radius: 3px;
 	-moz-border-radius-bottomleft: 3px; -webkit-border-bottom-left-radius: 3px;
@@ -245,7 +264,10 @@ input[type="text"], textarea, select {
 	-moz-border-radius-bottomright: 3px; -webkit-border-bottom-right-radius: 3px;
 }
 
-.box { 
+/* LukyLuke: added "#history .journal" and the two "#history .journal"-rules below */
+/* LukyLuke: added "#content .attachments" */
+/* LukyLuke: added ".controller-documents #content div.wiki" */
+.box, .reply, #history .journal, #content .attachments, .controller-documents #content div.wiki {
 	background-color: #fcfcfc;
 	border-top: 1px #eee solid;
 	border-right: 1px #ccc solid;
@@ -255,6 +277,13 @@ input[type="text"], textarea, select {
 	-moz-border-radius-topright: 3px; -webkit-border-top-right-radius: 3px;
 	-moz-border-radius-bottomleft: 3px; -webkit-border-bottom-left-radius: 3px;
 	-moz-border-radius-bottomright: 3px; -webkit-border-bottom-right-radius: 3px;
+}
+#history .journal:nth-child(even), #content .attachments {
+	background-color: #FFF7EA;
+}
+#history .journal, #content .attachments {
+	padding: 3px 8px;
+	margin: 0 0 8px;
 }
 
 #attachments_fields input[type="text"] {
@@ -272,7 +301,7 @@ table.list thead th {
 	font-size:.8em;
 }
 
-tr.message td.last_message { 
+tr.message td.last_message {
 	font-size:.9em;
 }
 
@@ -286,3 +315,23 @@ div#activity dd, #search-results dd {
 span.description { margin: .5em 0;}
 
 hr { background:#eee none repeat scroll 0% 0%; }
+
+/* LukyLuke: added all rules below for Documents-Look'n'Feel */
+.controller-documents #content h4 {
+	border: 1px solid #F3ECE3;
+	border-width: 0 0 1px;
+	font-weight: bold;
+}
+.controller-documents #content p {
+	font-size: 80%;
+	margin: 0;
+	padding: 0;
+}
+.controller-documents #content div.wiki {
+	font-size: 120%;
+	padding: 0 5px;
+}
+.controller-documents #content div.wiki p {
+	padding: 3px 8px;
+}
+
