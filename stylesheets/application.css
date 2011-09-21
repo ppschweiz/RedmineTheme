@@ -96,6 +96,7 @@ h1, h2, h3, h4, h5, h6 { color: #000; font-family: 'Lucida Grande', 'Lucida Sans
 .wiki h1, .wiki h2, .wiki h3, .wiki h4, .wiki h5, .wiki h6 { color: #000; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Arial, Verdana, sans-serif; }
 h1 { color: #000; font-size: 24px; font-weight: normal; margin:0pt 0pt 0pt 0.25em; padding:0pt 0pt 10px; text-align:left; }
 h2, h3, h4, .wiki h1, .wiki h2, .wiki h3 { border-bottom: 0px;}
+.wiki h3 { font-size: 1.1em; }
 
 h2, .wiki h1 {
 	background-color: #FBF8F2;
@@ -112,7 +113,7 @@ h2, .wiki h1 {
 	-moz-border-radius-bottomright: 3px; -webkit-border-bottom-right-radius: 3px;
 }
 .wiki h2 { background-color: #FBF8F2; font-size:1.1em; padding: 1px 5px; }
-
+h2 img { vertical-align: middle; } /* Align the Username and the image - for example under /users/ID */
 h3, h4 { font-weight: normal; color: #000;}
 
 #sidebar h3 { color: #000; border-bottom:1px solid #989898; padding:6px 0; }
@@ -146,8 +147,11 @@ blockquote { background: #FFF7EA; padding: 5px; font-size: 0.95em; }
 blockquote p { padding: 0; margin: 5px 0; }
 div.issue { background: #FFF7EA; border-radius: 0.3em; }
 tr.parent.open { font-weight: bold; background-color: inherited; } /* an invalid background-color should use the parent one */
-tr.parent.open span.expander, tr.parent span.expander { background-repeat: no-repeat; background-position: center; }
+tr.parent.open span.expander, tr.parent span.expander, tr span.expander { background-repeat: no-repeat; background-position: center center; }
 table.list tbody tr:hover { background-color:#FBF8F2; }
+td.checkbox { padding: 8px 0 0 0; vertical-align: top; }
+table.list tbody tr.group td { border-bottom: 2px solid #999; padding: 1.3em 0 0 0.3em; }
+.wiki a.tag_level5 { font-size: 1.1em; padding-right: 0.6em; }
 
 /* Settings menu */
 #content .tabs ul li a {
@@ -278,10 +282,11 @@ input[type="text"], input[type="file"], input[type='password'], textarea, select
 #history .journal:nth-child(even), #content .attachments {
 	background-color: #FFF7EA;
 }
-#history .journal, #content .attachments {
+#history .journal, #content .attachments, #content .message.reply {
 	padding: 3px 8px;
 	margin: 0 0 8px;
 }
+#content .message.reply h4 img { margin: -4px 0 -1px; } /* Ugly look'n'Feel in Forum-Replys */
 
 #attachments_fields input[type="text"] {
 	width: 39%;
@@ -318,17 +323,38 @@ hr { background:#eee none repeat scroll 0% 0%; }
 	border: 1px solid #F3ECE3;
 	border-width: 0 0 1px;
 	font-weight: bold;
+	margin: 5px 0;
 }
 .controller-documents #content p {
 	font-size: 80%;
 	margin: 0;
 	padding: 0;
 }
-.controller-documents #content div.wiki {
+.controller-documents #content div.wiki,
+.controller-documents #content div.attachments {
 	font-size: 120%;
 	padding: 0 5px;
 }
 .controller-documents #content div.wiki p {
 	padding: 3px 8px;
 }
-
+.controller-documents #content h3 {
+	margin: 1.2em 0 0 0;
+}
+.controller-documents.action-index #content h3 {
+	padding: 3px 5px;
+	background: #F5ECD6;
+	border: 1px solid #999;
+	border-width: 0 0 1px;
+}
+.controller-documents.action-show #content p:first-line {
+	font-weight: bold;
+	font-style: normal;
+	display: block;
+	margin: 1em 0;
+	padding: 3px 5px;
+	background: #F5ECD6;
+	color: #000;
+	border: 1px solid #999;
+	border-width: 0 0 1px;
+}
