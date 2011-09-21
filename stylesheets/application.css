@@ -113,7 +113,7 @@ h2, .wiki h1 {
 	-moz-border-radius-bottomright: 3px; -webkit-border-bottom-right-radius: 3px;
 }
 .wiki h2 { background-color: #FBF8F2; font-size:1.1em; padding: 1px 5px; }
-h2 img { vertical-align: middle; } /* Align the Username and the image - for example under /users/ID */
+h2 img { vertical-align: middle !important; } /* Align the Username and the image - for example under /users/ID */
 h3, h4 { font-weight: normal; color: #000;}
 
 #sidebar h3 { color: #000; border-bottom:1px solid #989898; padding:6px 0; }
@@ -350,7 +350,8 @@ hr { background:#eee none repeat scroll 0% 0%; }
 	border: 1px solid #999;
 	border-width: 0 0 1px;
 }
-.controller-documents.action-show #content p:first-line {
+/* Does not what we want :( */
+.controller-documents.action-show #content p em:first-line {
 	font-weight: bold;
 	font-style: normal;
 	display: block;
