@@ -165,14 +165,16 @@ table.list tbody tr.group td { border-bottom: 2px solid #999; padding: 1.3em 0 0
 .wiki ul.toc li { padding: 3px 0 0; }
 
 /* Download Button */
-a.download {
+#sidebar p a.download {
 	background: #EEB50C url(../img/bgbutton.png) 50% 50% repeat-x;
 	border: 1px solid #C9792A;
 	border-radius: 5px;
 	color: #000;
 }
-a.download span {
+#sidebar p a.download span {
 	color: #000;
+}
+#sidebar p a.download span.icon-download {
 	background-image: url(../img/download.png);
 }
 
