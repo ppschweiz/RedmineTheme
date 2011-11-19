@@ -152,6 +152,25 @@ table.list tbody tr:hover { background-color:#FBF8F2; }
 td.checkbox { padding: 8px 0 0 0; vertical-align: top; }
 table.list tbody tr.group td { border-bottom: 2px solid #999; padding: 1.3em 0 0 0.3em; }
 .wiki a.tag_level5 { font-size: 1.1em; padding-right: 0.6em; }
+.wiki ul.toc {
+	border: 1px solid #C9792A;
+	background-color: #F5ECD6;
+	border-radius: 5px;
+	padding: 5px 15px 8px;
+}
+.wiki ul.toc li { padding: 3px 0 0; }
+
+/* Download Button */
+a.download {
+	background: #EEB50C url(../img/bgbutton.png) 50% 50% repeat-x;
+	border: 1px solid #C9792A;
+	border-radius: 5px;
+	color: #000;
+}
+a.download span {
+	color: #000;
+	background-image: url(../img/download.png);
+}
 
 /* Settings menu */
 #content .tabs ul li a {
